@@ -48,6 +48,44 @@
 
 
 
-# Sentence transformers explainer
-This repository contains an implementation of a method to explain sentence-transformers relevance of Inputs.
+## Sentence transformers explainer
+This repository contains an implementation of a method to explain sentence-transformers relevance of Inputs. Specially this repo is based in a 'similarity' task, and getting the relevance for words in a sentence when comparing it to another. This could help in understanding retrievers for RAG systems, and knowing what is our 'Sentence embedding' taking into account.
+
+The development is based in the 'Captum' library, and specially in this tutorial [Bert Tutorial](https://captum.ai/tutorials/Bert_SQUAD_Interpret).
+
+
+
+
+## Installation
+
+1. Clone this repository in a directory
+
+2. Move to the repository folder
+
+3.  Create a python virtual environment.
+
+```python
+
+python3 -m venv <your_env>
+```
+
+
+
+4.  Activate the environment in the folder from terminal
+
+```
+./<your_env>/Scripts/activate
+```
+
+or in linux OS
+
+```
+./<your_env>/bin/activate
+```
+
+
+## Tutorial of the development
+
+Right now all the development can be found in the [Introduction tutorial](./st-explainer_method.ipynb)
+
 
