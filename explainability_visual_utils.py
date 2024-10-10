@@ -125,4 +125,4 @@ def visualize_text_v2(datarecords: Iterable, legend: bool = True) -> "HTML":
     html = HTML("".join(dom))
     display(html)
 
-    return html
+    return "".join(dom),html
