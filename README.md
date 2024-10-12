@@ -1,4 +1,4 @@
-<table width='100%' style='border-collapse: collapse; margin-top: 20px;'>
+<!-- <table width='100%' style='border-collapse: collapse; margin-top: 20px;'>
   <tr>
     <td>
       <span class='word' style='cursor: pointer; padding: 2px 4px; border-radius: 4px; position: relative; display: inline-block; text-decoration: none;'>[CLS]</span>
@@ -41,9 +41,9 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   font-size: 12px;
 }
-</style>
+</style> -->
 
-
+![Styled Text Visualization](./repo_graphics/Code_3dSaxegjhd.gif)
 
 
 
