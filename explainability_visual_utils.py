@@ -41,10 +41,7 @@ def format_word_importances(words, importances):
     return "<td>" + " ".join(formatted_words) + "</td>"
 
 def visualize_text_v2(datarecords: Iterable, legend: bool = True) -> "HTML":
-    # assert "IPython" in globals(), (
-    #     "IPython must be available to visualize text. "
-    #     "Please run 'pip install ipython'."
-    # )
+
     dom = ["<table width='100%' style='border-collapse: collapse; margin-top: 20px;'>"]
     rows = [
         "<tr><th>True Label</th>"
@@ -69,9 +66,7 @@ def visualize_text_v2(datarecords: Iterable, legend: bool = True) -> "HTML":
                 ]
             )
         )
-
-    print("Generated rows--->",rows)
-
+   
     dom.append("".join(rows))
     dom.append("</table>")
 
@@ -84,11 +79,9 @@ def visualize_text_v2(datarecords: Iterable, legend: bool = True) -> "HTML":
 
         for value, label in zip([-1, 0, 1], ["Negative", "Neutral", "Positive"]):
             dom.append(
-                '<span style="display: inline-block; width: 12px; height: 12px; \
+                f'<span style="display: inline-block; width: 12px; height: 12px; \
                 border: 1px solid #000; margin-right: 5px; background-color: \
-                {value}"></span> {label}  '.format(
-                    value=_get_color(value), label=label
-                )
+                {_get_color(value)}"></span> {label}  '
             )
         dom.append("</div>")
 
