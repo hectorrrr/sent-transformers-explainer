@@ -84,7 +84,7 @@ or in linux OS
 ```
 
 
-## Tutorial of the development
+## Development Tutorial
 
 Right now all the development can be found in the [Introduction tutorial](./st-explainer_method.ipynb)
 
