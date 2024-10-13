@@ -20,7 +20,7 @@ def format_special_tokens(token):
         return "#" + token.strip("<>")
     return token
 
-def format_word_importances(words, importances):
+def format_word_importances(words, importances, percentage):
     """Format words with their importances as HTML elements with hover effects."""
     formatted_words = []
     for word, importance in zip(words, importances):
@@ -35,12 +35,12 @@ def format_word_importances(words, importances):
             )
         else:
             formatted_words.append(
-                f"<span class='word' style='background-color: {_get_color(importance)}; color: white; padding: 2px 4px; border-radius: 4px;' data-tooltip='Importance: {importance:.2f}'>{word}</span>"
+                f"<span class='word' style='background-color: {_get_color(importance if not percentage else importance/100)}; color: white; padding: 2px 4px; border-radius: 4px;' data-tooltip='Importance: {importance:.2f}'>{word}</span>"
             )
     # print("Formatted words--->",formatted_words)
     return "<td>" + " ".join(formatted_words) + "</td>"
 
-def visualize_text_v2(datarecords: Iterable, legend: bool = True) -> "HTML":
+def visualize_text_v2(datarecords: Iterable, legend: bool = True, percentage: bool= False) -> "HTML":
 
     dom = ["<table width='100%' style='border-collapse: collapse; margin-top: 20px;'>"]
     rows = [
@@ -60,7 +60,7 @@ def visualize_text_v2(datarecords: Iterable, legend: bool = True) -> "HTML":
                         )
                     ),
                     format_word_importances(
-                        datarecord.raw_input_ids, datarecord.word_attributions
+                        datarecord.raw_input_ids, datarecord.word_attributions, percentage
                     ),
                     "</tr>",
                 ]
